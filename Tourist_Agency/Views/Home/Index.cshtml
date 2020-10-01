@@ -1,0 +1,28 @@
+﻿@model Tourist_Agency.Models.Travel
+
+@{
+    ViewBag.Title = "Путівка";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h1>Навза путівки: @Model.Name</h1>
+        <h1>Опис путівки: @Model.Description</h1>
+        <h1>Категорія путівки: @Model.Category </h1>
+        <h1> Країна відпралення: @Model.SCountry </h1>
+        <h1>Місто відправлення: @Model.STown</h1>
+        <h1>Країна прибуття: @Model.FCountry</h1>
+        <h1>Місто прибуття: @Model.FTown</h1>
+        <h1>Ціна путівки: @Model.Price$</h1>
+        <h1>Дата: @Model.Date</h1>
+        <h1>Тривалість днів: @Model.Duration</h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿@model Tourist_Agency.Models.Travel
+
+@{
+    ViewBag.Title = "Інформація";
+    Layout = "~/Views/_BasicLayout.cshtml";
+}
+<table>
+    <thead>
+        <tr><th>Властивість</th><th>Значення</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Назва</td><td>@Model.Name</td></tr>
+        <tr><td>Ціна</td><td>@Model.Price$</td></tr>
+        <tr>
+            <td>Кількість</td>
+            <td>
+                @if (ViewBag.Count == 0)
+                {
+                    @:Out of Stock
+                }
+                else if (ViewBag.Count == 1)
+                {
+                    <b>Low Stock (@ViewBag.Count)</b>
+                }
+                else
+                {
+                    @ViewBag.Count
+                }
+            </td>
+    </tbody>
+</table>
+<div data-discount="@ViewBag.ApplyDiscount"
+     data-express="@ViewBag.ExpressShip"
+     data-supplier="@ViewBag.Supplier">
+    Атрибути:
+</div>
+Знижка:<input type="checkbox" checked="@ViewBag.ApplyDiscount" />
+Швидка доставка:<input type="checkbox" checked="@ViewBag.ExpressShip" />
+Постачальник:<input type="checkbox" checked="@ViewBag.Supplier" />
